@@ -22,6 +22,18 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
+        // Text Button Theme
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            minimumSize: const Size.fromHeight(18),
+            foregroundColor: kGreen,
+            textStyle: const TextStyle(
+              fontSize: 16,
+              fontFamily: 'Nunito',
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
       routerConfig: router,
     );
   }
