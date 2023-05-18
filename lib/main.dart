@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:from_scratch/constants.dart';
 import 'package:from_scratch/route/index.dart';
 
 void main() {
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(
+        fontFamily: 'Nunito',
+        // Elevated Button Theme
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             minimumSize: const Size.fromHeight(50),
@@ -34,6 +38,14 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
+        // Text theme
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(
+              fontWeight: FontWeight.w700, fontSize: 24, color: kDark),
+          labelMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+          bodySmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+        ),
+      ),
       routerConfig: router,
     );
   }
