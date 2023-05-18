@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:from_scratch/widgets/ui/auth_page_header.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -10,6 +11,6 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+          const AuthPageHeader("Start from Scratch"),
   }
 }
