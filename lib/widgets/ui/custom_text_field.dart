@@ -6,12 +6,14 @@ class CustomTextField extends StatefulWidget {
     this.obscure = false,
     this.inputType = TextInputType.none,
     required this.label,
+    required this.fieldController,
     super.key,
   });
 
   final bool obscure;
   final String label;
   final TextInputType inputType;
+  final TextEditingController fieldController;
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -21,6 +23,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.fieldController,
       keyboardType: widget.inputType,
       obscureText: widget.obscure,
       decoration: InputDecoration(
