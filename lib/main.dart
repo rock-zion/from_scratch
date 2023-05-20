@@ -19,8 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider<AuthModel>(
-            create: (context) => AuthModel(),
+          ChangeNotifierProvider<SignupModel>(
+            create: (context) => SignupModel(),
+          ),
+          ChangeNotifierProvider<LoginModel>(
+            create: (context) => LoginModel(),
           ),
         ],
         child: MaterialApp.router(

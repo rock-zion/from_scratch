@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AuthModel>(context);
+    final provider = Provider.of<LoginModel>(context);
 
     return Scaffold(
       body: ListView(
