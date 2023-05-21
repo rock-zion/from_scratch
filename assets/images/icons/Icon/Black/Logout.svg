@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Logout</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-634.500000, -1305.500000)" id="Icon-/-Black-/-Logout" stroke="#363837">
+            <g transform="translate(635.000000, 1306.000000)">
+                <polyline id="Line" points="7 11 7 14 0 14 0 0 7 0 7 3"></polyline>
+                <path d="M12,7 L4,7 L12,7 Z" id="Line"></path>
+                <polyline id="Line" points="11 4 13 7 11 10"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

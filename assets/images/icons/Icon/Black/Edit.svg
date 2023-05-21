@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17.5355339px" height="17.5355339px" viewBox="0 0 17.5355339 17.5355339" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Edit</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-1025.353553, -1248.510408)" id="Icon-/-Black-/-Edit" stroke="#363837">
+            <g transform="translate(1026.060660, 1249.217514)">
+                <path d="M5.93933983,-0.338834765 L5.93933983,-0.338834765 L5.93933983,-0.338834765 L5.93933983,15.2175144 L8.06066017,17.3388348 L10.1819805,15.2175144 L10.1819805,-0.338834765 C9.01040764,-1.51040764 7.1109127,-1.51040764 5.93933983,-0.338834765 Z" id="Line" transform="translate(8.060660, 8.060660) rotate(45.000000) translate(-8.060660, -8.060660) "></path>
+                <path d="M11.1873755,2.28005632 C11.9807884,2.4176211 12.6167469,2.72565548 13.0952509,3.20415945 C13.5737548,3.68266343 13.9115384,4.26492821 14.1086016,4.95095382" id="Line-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

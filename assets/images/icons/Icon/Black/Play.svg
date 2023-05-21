@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13.7642606px" height="13.7642606px" viewBox="0 0 13.7642606 13.7642606" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Play</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-971.500000, -1306.118034)" id="Icon-/-Black-/-Play" stroke="#363837">
+            <g transform="translate(972.000000, 1306.000000)">
+                <path d="M0,12.381966 L0,1.61803399 C-6.76353751e-17,1.06574924 0.44771525,0.618033989 1,0.618033989 C1.1552451,0.618033989 1.30835816,0.654179081 1.4472136,0.723606798 L12.2111456,6.10557281 C12.7051241,6.35256206 12.9053485,6.9532351 12.6583592,7.4472136 C12.5615955,7.640741 12.404673,7.79766349 12.2111456,7.89442719 L1.4472136,13.2763932 C0.953235098,13.5233825 0.352562058,13.3231581 0.105572809,12.8291796 C0.0361450918,12.6903242 -3.14054866e-16,12.5372111 0,12.381966 Z" id="Line"></path>
+            </g>
+        </g>
+    </g>
+</svg>

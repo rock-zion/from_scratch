@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Filter</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-1082.500000, -1249.500000)" id="Icon-/-Black-/-Filter" stroke="#363837">
+            <g transform="translate(1083.000000, 1250.000000)">
+                <path d="M14,1.5 L0,1.5 L14,1.5 Z" id="Line"></path>
+                <path d="M11,3 L11,0 L11,3 Z" id="Line-Copy"></path>
+                <path d="M14,7 L0,7 L14,7 Z" id="Line"></path>
+                <path d="M3.5,8.5 L3.5,5.5 L3.5,8.5 Z" id="Line-Copy"></path>
+                <path d="M14,12.5 L0,12.5 L14,12.5 Z" id="Line"></path>
+                <path d="M7.5,14 L7.5,11 L7.5,14 Z" id="Line-Copy"></path>
+            </g>
+        </g>
+    </g>
+</svg>

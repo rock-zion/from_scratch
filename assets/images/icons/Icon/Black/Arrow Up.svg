@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15.0000181px" height="7.00000906px" viewBox="0 0 15.0000181 7.00000906" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Arrow Up</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-858.499991, -1253.500000)" id="Icon-/-Black-/-Arrow-Up" stroke="#363837">
+            <g transform="translate(859.000000, 1254.000000)">
+                <polyline id="Line" transform="translate(7.000000, 3.000000) scale(1, -1) translate(-7.000000, -3.000000) " points="0 0 7 6 14 0"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

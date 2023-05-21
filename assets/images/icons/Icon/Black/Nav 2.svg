@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Nav 2</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-802.500000, -1306.500000)" id="Icon-/-Black-/-Nav-2" stroke="#363837">
+            <g transform="translate(803.000000, 1307.000000)">
+                <rect id="Rectangle" x="3" y="0" width="8" height="12"></rect>
+                <polyline id="Rectangle-Copy-2" points="13 0 14 0 14 12 13 12"></polyline>
+                <polyline id="Rectangle-Copy-3" points="1 0 0 0 0 12 1 12"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13.4142136px" height="13.4142136px" viewBox="0 0 13.4142136 13.4142136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Black / Close</title>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-915.292893, -1250.292893)" id="Icon-/-Black-/-Close" stroke="#363837">
+            <g transform="translate(915.646447, 1250.646447)">
+                <line x1="6.35355339" y1="-2.13172798" x2="6.35355339" y2="14.8388348" id="Line" transform="translate(6.353553, 6.353553) rotate(45.000000) translate(-6.353553, -6.353553) "></line>
+                <line x1="-2.13172798" y1="6.35355339" x2="14.8388348" y2="6.35355339" id="Line" transform="translate(6.353553, 6.353553) rotate(45.000000) translate(-6.353553, -6.353553) "></line>
+            </g>
+        </g>
+    </g>
+</svg>
