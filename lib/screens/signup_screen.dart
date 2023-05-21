@@ -39,8 +39,7 @@ class _SignupScreenState extends State<SignupScreen> {
       loading = true;
     });
     try {
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
