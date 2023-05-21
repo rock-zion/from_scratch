@@ -5,6 +5,8 @@ class CustomTextField extends StatefulWidget {
   const CustomTextField({
     this.obscure = false,
     this.inputType = TextInputType.none,
+    required this.handleValidator,
+    required this.handleChange,
     required this.label,
     required this.fieldController,
     super.key,
@@ -14,6 +16,8 @@ class CustomTextField extends StatefulWidget {
   final String label;
   final TextInputType inputType;
   final TextEditingController fieldController;
+  final void Function(String) handleChange;
+  final String? Function(String?) handleValidator;
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -22,7 +26,9 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: widget.handleValidator,
+      onChanged: widget.handleChange,
       controller: widget.fieldController,
       keyboardType: widget.inputType,
       obscureText: widget.obscure,
