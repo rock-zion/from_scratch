@@ -14,6 +14,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
   late TextEditingController emailController;
   late TextEditingController passwordController;
 
@@ -38,46 +39,71 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: ListView(
         children: [
-          const AuthPageHeader("Start from Scratch"),
+          const AuthPageHeader("Welcome Back!"),
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Create an account to continue",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(color: kGrey)),
-                // const SizedBox(height: 30),
-
-                CustomTextField(
-                    fieldController: emailController,
-                    label: "Email",
-                    inputType: TextInputType.emailAddress),
-                CustomTextField(
-                    fieldController: passwordController,
-                    label: "Password",
-                    obscure: true),
-                const SizedBox(height: 30),
-                ElevatedButton(
-                  child: const Text("Create Account"),
-                  onPressed: () {},
-                ),
-                const SizedBox(height: 30),
-                const Center(
-                    child: Text(
-                  "Already have an account?",
-                  textAlign: TextAlign.center,
-                )),
-                TextButton(
+            child: Form(
+              key: _formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Create an account to continue",
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: kGrey)),
+                  // const SizedBox(height: 30),
+                  CustomTextField(
+                      handleValidator: (String? p0) {
+                        return p0 != null && p0.isEmpty
+                            ? 'Email cannot be empty'
+                            : null;
+                      },
+                      handleChange: (p0) => provider.email = p0,
+                      fieldController: emailController,
+                      label: "Email",
+                      inputType: TextInputType.emailAddress),
+                  CustomTextField(
+                      handleValidator: (String? p0) {
+                        return p0 != null && p0.isEmpty
+                            ? 'Password cannot be empty'
+                            : p0 != null && p0.length < 5
+                                ? "Password length cannot be less than 5"
+                                : null;
+                      },
+                      handleChange: (p0) => provider.password = p0,
+                      fieldController: passwordController,
+                      label: "Password",
+                      obscure: true),
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    child: const Text("Create Account"),
                     onPressed: () {
-                      context.go("/login");
+                      if (_formKey.currentState!.validate()) {
+                        // If the form is valid, display a snackbar. In the real world,
+                        // you'd often call a server or save the information in a database.
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Processing Data')),
+                        );
+                      }
                     },
-                    child: const Text("Create Account Here")),
-                const SizedBox(height: 45)
-              ],
+                  ),
+                  const SizedBox(height: 30),
+                  const Center(
+                      child: Text(
+                    "Already have an account?",
+                    textAlign: TextAlign.center,
+                  )),
+                  TextButton(
+                      onPressed: () {
+                        context.go("/");
+                      },
+                      child: const Text("Create Account Here")),
+                  const SizedBox(height: 45)
+                ],
+              ),
             ),
           ),
         ],
