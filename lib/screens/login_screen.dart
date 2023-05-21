@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:from_scratch/constants.dart';
 import 'package:from_scratch/models/auth.dart';
@@ -14,9 +15,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormState>();
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  final _formKey = GlobalKey<FormState>();
+  bool loading = false;
 
   @override
   void dispose() {
@@ -30,6 +32,42 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     emailController = TextEditingController();
     passwordController = TextEditingController();
+  }
+
+  handleLogin() async {
+    setState(() {
+      loading = true;
+    });
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      setState(() {
+        loading = false;
+      });
+      context.go("/home");
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      if (e.code == "wrong-password") {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("You have supplied a wrong password. Please try again"),
+        ));
+      } else if (e.code == "user-not-found") {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content:
+              Text("There appears to be no user associated with this email"),
+        ));
+      }
+
+      setState(() {
+        loading = false;
+      });
+    } catch (e) {
+      print(e);
+      setState(() {
+        loading = false;
+      });
+    }
   }
 
   @override
@@ -81,13 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ElevatedButton(
                     child: const Text("Create Account"),
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        // If the form is valid, display a snackbar. In the real world,
-                        // you'd often call a server or save the information in a database.
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Processing Data')),
-                        );
-                      }
+                      if (_formKey.currentState!.validate()) handleLogin();
                     },
                   ),
                   const SizedBox(height: 30),
