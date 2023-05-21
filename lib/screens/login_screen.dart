@@ -117,7 +117,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscure: true),
                   const SizedBox(height: 30),
                   ElevatedButton(
-                    child: const Text("Create Account"),
+                    child: !loading
+                        ? const Text("Login")
+                        : const SizedBox(
+                            height: 24,
+                            width: 24,
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                            ),
+                          ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) handleLogin();
                     },
@@ -125,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 30),
                   const Center(
                       child: Text(
-                    "Already have an account?",
+                    "New to Scratch?",
                     textAlign: TextAlign.center,
                   )),
                   TextButton(
