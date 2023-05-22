@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SignupModel extends ChangeNotifier {
-  late String _email = "";
-  late String _password = "";
+  String _email = "";
+  String _password = "";
+  String _fullName = "";
 
   String get email => _email;
   set email(String email) {
@@ -12,6 +13,11 @@ class SignupModel extends ChangeNotifier {
   String get password => _password;
   set password(String password) {
     _password = password;
+  }
+
+  String get fullName => _fullName;
+  set fullName(String fullName) {
+    _fullName = fullName;
   }
 }
 
