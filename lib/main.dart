@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
                 bodyMedium:
                     TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
+              // Divider theme
               dividerTheme:
                   const DividerThemeData(color: kDivider, thickness: 1)),
           routerConfig: router,
