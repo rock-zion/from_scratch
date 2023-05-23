@@ -17,6 +17,7 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  late TextEditingController fullNameController;
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
 
@@ -24,6 +25,7 @@ class _SignupScreenState extends State<SignupScreen> {
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
+    fullNameController.dispose();
     super.dispose();
   }
 
@@ -95,28 +97,45 @@ class _SignupScreenState extends State<SignupScreen> {
                   // const SizedBox(height: 30),
 
                   CustomTextField(
-                      handleValidator: (String? p0) {
-                        return p0 != null && p0.isEmpty
-                            ? 'Email cannot be empty'
-                            : null;
-                      },
-                      handleChange: (p0) => provider.email = p0,
-                      fieldController: emailController,
-                      label: "Email",
-                      inputType: TextInputType.emailAddress),
+                    handleValidator: (String? p0) {
+                      return p0 != null && p0.isEmpty
+                          ? 'Email cannot be empty'
+                          : null;
+                    },
+                    handleChange: (p0) => provider.email = p0,
+                    fieldController: emailController,
+                    label: "Email",
+                    inputType: TextInputType.emailAddress,
+                  ),
+
                   CustomTextField(
-                      handleValidator: (String? p0) {
-                        return p0 != null && p0.isEmpty
-                            ? 'Password cannot be empty'
-                            : p0 != null && p0.length < 5
-                                ? "Password length cannot be less than 5"
-                                : null;
-                      },
-                      handleChange: (p0) => provider.password = p0,
-                      fieldController: passwordController,
-                      label: "Password",
-                      obscure: true),
+                    handleValidator: (String? p0) {
+                      return p0 != null && p0.isEmpty
+                          ? 'Name cannot be empty'
+                          : null;
+                    },
+                    handleChange: (p0) => provider.fullName = p0,
+                    fieldController: fullNameController,
+                    label: "Full Name",
+                    inputType: TextInputType.text,
+                  ),
+
+                  CustomTextField(
+                    handleValidator: (String? p0) {
+                      return p0 != null && p0.isEmpty
+                          ? 'Password cannot be empty'
+                          : p0 != null && p0.length < 5
+                              ? "Password length cannot be less than 5"
+                              : null;
+                    },
+                    handleChange: (p0) => provider.password = p0,
+                    fieldController: passwordController,
+                    label: "Password",
+                    obscure: true,
+                  ),
+
                   const SizedBox(height: 30),
+
                   ElevatedButton(
                     child: !loading
                         ? const Text("Create Account")
