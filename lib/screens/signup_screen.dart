@@ -47,7 +47,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
     try {
       final db = FirebaseFirestore.instance;
-      db.collection("users").add(userData);
+      db.collection("users").doc(user?.uid).set(userData);
       setState(() {
         loading = false;
       });
