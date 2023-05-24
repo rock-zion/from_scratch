@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:from_scratch/constants.dart';
@@ -34,6 +35,26 @@ class _SignupScreenState extends State<SignupScreen> {
     super.initState();
     emailController = TextEditingController();
     passwordController = TextEditingController();
+    fullNameController = TextEditingController();
+  }
+
+  void handleSaveUserData(User? user) async {
+    final userData = <String, dynamic>{
+      "uuid": user?.uid,
+      "fullName": fullNameController.text,
+      "email": emailController.text
+    };
+
+    try {
+      final db = FirebaseFirestore.instance;
+      db.collection("users").add(userData);
+      setState(() {
+        loading = false;
+      });
+      context.go("/home");
+    } catch (e) {
+      print(e);
+    }
   }
 
   void handleSignup() async {
@@ -41,17 +62,13 @@ class _SignupScreenState extends State<SignupScreen> {
       loading = true;
     });
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
-      setState(() {
-        loading = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text("Account created successfully"),
-      ));
-      context.go("/home");
+
+      handleSaveUserData(credential.user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
