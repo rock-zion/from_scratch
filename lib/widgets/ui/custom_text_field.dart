@@ -5,6 +5,7 @@ class CustomTextField extends StatefulWidget {
   const CustomTextField({
     this.obscure = false,
     this.inputType = TextInputType.none,
+    this.disableField = false,
     required this.handleValidator,
     required this.handleChange,
     required this.label,
@@ -13,6 +14,7 @@ class CustomTextField extends StatefulWidget {
   });
 
   final bool obscure;
+  final bool disableField;
   final String label;
   final TextInputType inputType;
   final TextEditingController fieldController;
@@ -32,9 +34,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       controller: widget.fieldController,
       keyboardType: widget.inputType,
       obscureText: widget.obscure,
+      enabled: !widget.disableField,
       decoration: InputDecoration(
-          // focusedBorder: const InputBorder(borderSide: BorderSide()),
-          // border: const InputBorder(),
           label: Text(
             widget.label,
             style: Theme.of(context).textTheme.bodyMedium,
