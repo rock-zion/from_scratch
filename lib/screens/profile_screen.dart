@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:from_scratch/constants.dart';
@@ -11,10 +13,33 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final currentUser = FirebaseAuth.instance.currentUser;
+  final db = FirebaseFirestore.instance;
+  late Map<String?, dynamic> userData;
   bool _progressController = true;
+
+  @override
+  void initState() {
+    getUserData();
+    super.initState();
+  }
+
+  void getUserData() async {
+    try {
+      final userDoc = await db
+          .collection("users")
+          .where("uuid", isEqualTo: currentUser?.uid)
+          .get();
+
+      userData = userDoc.docs[0].data();
+      setState(() {
         _progressController = false;
       });
     } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
