@@ -42,8 +42,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return SafeArea(
-        child: Padding(
         child: _progressController
             ? const Center(child: CircularProgressIndicator())
             : Padding(
@@ -134,7 +135,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     )
                   ],
                 ),
-              )
               ));
   }
 }
