@@ -56,12 +56,27 @@ class MyApp extends StatelessWidget {
               // Text theme
               textTheme: const TextTheme(
                 displayLarge: TextStyle(
-                    fontWeight: FontWeight.w700, fontSize: 24, color: kDark),
-                labelMedium:
-                    TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                bodySmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                bodyMedium:
-                    TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24,
+                  color: kDark,
+                ),
+                displayMedium: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  color: kDark,
+                ),
+                labelMedium: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                ),
+                bodySmall: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+                bodyMedium: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
               // Divider theme
               dividerTheme:
