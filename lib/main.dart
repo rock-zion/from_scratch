@@ -79,8 +79,10 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               // Divider theme
-              dividerTheme:
-                  const DividerThemeData(color: kDivider, thickness: 1)),
+              dividerTheme: const DividerThemeData(
+                color: kDivider,
+                thickness: 1,
+              )),
           routerConfig: router,
         ));
   }

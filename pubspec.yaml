@@ -46,6 +46,10 @@ dependencies:
   firebase_auth: ^4.6.1
   firebase_core: ^2.13.0
   flutter_svg: ^1.1.6
+  firebase_database: ^10.2.1
+  cloud_firestore: ^4.7.1
+  image_picker: ^0.8.7+5
+  video_player: ^2.6.1
 
 dev_dependencies:
   flutter_test:
