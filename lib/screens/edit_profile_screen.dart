@@ -128,9 +128,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       ),
                       const SizedBox(height: 10),
                       TextButton(
-                          onPressed: () {
-                            
-                          },
+                          onPressed: () {},
                           child: const Text("Edit Profile Picture")),
                       Form(
                           key: _formKey,
