@@ -80,9 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   ),
                 )
               ],
-              
             ),
-            
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.only(
