@@ -13,20 +13,36 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late PageController pageController;
   int _navIndex = 0;
   static const List<Widget> _bodyOptions = <Widget>[
     SearchScreen(),
     ExploreScreen(),
     ProfileScreen()
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    pageController.dispose();
+    super.dispose();
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _navIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    void _onItemTapped(int index) {
-      setState(() {
-        _navIndex = index;
-      });
-    }
-
     return Scaffold(
       body: _bodyOptions.elementAt(_navIndex),
       bottomNavigationBar: SizedBox(
