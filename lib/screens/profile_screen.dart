@@ -138,25 +138,31 @@ class _ProfileScreenState extends State<ProfileScreen>
                 child: Divider(),
               ),
             ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding:
-                    const EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
-                child: TabBar(
-                  physics: const BouncingScrollPhysics(),
-                  controller: tbController,
-                  labelColor: kDark,
-                  unselectedLabelColor: kInactiveText,
-                  indicatorWeight: 4,
-                  indicatorColor: kGreen,
-                  tabs: const [
-                    TabColunm(metric: "20", label: "Recipes"),
-                    TabColunm(metric: "20", label: "Saved"),
-                    TabColunm(metric: "20", label: "Following"),
-                  ],
-                ),
-              ),
-            ),
+            SliverPersistentHeader(
+                pinned: true,
+                delegate: MySliverPersistentHeaderDelegate(
+                    Container(
+                      color: kWhite,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 25.0, right: 25.0, top: 25.0),
+                        child: TabBar(
+                          physics: const BouncingScrollPhysics(),
+                          controller: tbController,
+                          labelColor: kDark,
+                          unselectedLabelColor: kInactiveText,
+                          indicatorWeight: 4,
+                          indicatorColor: kGreen,
+                          tabs: const [
+                            TabColunm(metric: "20", label: "Recipes"),
+                            TabColunm(metric: "20", label: "Saved"),
+                            TabColunm(metric: "20", label: "Following"),
+                          ],
+                        ),
+                      ),
+                    ),
+                    90,
+                    maxExtent: 90)),
             const SliverToBoxAdapter(
               child: Divider(height: 1),
             )
@@ -231,5 +237,29 @@ class TabColunm extends StatelessWidget {
         const SizedBox(height: 5),
       ],
     );
+  }
+}
+
+class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  MySliverPersistentHeaderDelegate(this._tabBar, this.minExtent,
+      {required this.maxExtent});
+
+  final Container _tabBar;
+  @override
+  final double minExtent;
+  @override
+  final double maxExtent;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      child: _tabBar,
+    );
+  }
+
+  @override
+  bool shouldRebuild(MySliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }
